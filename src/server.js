@@ -2,10 +2,12 @@ const express = require("express");
 const authenticate=require('./data-access/authenticate')
 const sequelize=require('./data-access/database');
 const userRoutes=require("./routes/routes");
-require('./models/user.model')
+const constants=require("../constants/server.constants");
+console.log(constants);
+// require('./models/user.model')
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+
 
 app.use(express.json());
 
@@ -20,8 +22,8 @@ sequelize.sync({force:true})
         console.log("Failed to sync db: " + err.message);
     })
 
-app.listen(PORT, () => {
+app.listen(constants.PORT, () => {
     authenticate()
-    .then(()=>console.log(`Server is running on port ${PORT}.`))
+    .then(()=>console.log(`Server is running on port ${constants.PORT}.`))
     .catch((err)=>console.log(err.message))
 });

@@ -104,7 +104,7 @@ var fetchUserById = /*#__PURE__*/function () {
           _context3.next = 4;
           return User.findAll({
             where: {
-              userId: userId
+              id: userId
             }
           });
         case 4:
@@ -116,7 +116,7 @@ var fetchUserById = /*#__PURE__*/function () {
           _context3.prev = 8;
           _context3.t0 = _context3["catch"](1);
           return _context3.abrupt("return", res.status(500).json({
-            message: err.message || "some error in fetching user details"
+            message: _context3.t0.message || "some error in fetching user details"
           }));
         case 11:
         case "end":
@@ -139,7 +139,7 @@ var updateUserDetails = /*#__PURE__*/function () {
           _context4.next = 4;
           return User.update(req.body, {
             where: {
-              userId: userId
+              id: userId
             }
           });
         case 4:
@@ -178,7 +178,7 @@ var deleteUser = /*#__PURE__*/function () {
             isDeleted: true
           }, {
             where: {
-              userId: userId
+              id: userId
             }
           });
         case 4:

@@ -43,10 +43,10 @@ const getusers=async(_req,res)=>{
 const fetchUserById=async(req,res)=>{
     const userId=req.params.id;
     try {
-        const fetchedUser=await User.findAll({where: {userId:userId}});
+        const fetchedUser=await User.findAll({where: {id:userId}});
         return fetchedUser?res.status(200).json(fetchedUser):res.status(404).json({"message":`cannot find user with userId=${userId}`})
     } catch (error) {
-        return res.status(500).json({message:err.message || "some error in fetching user details"})
+        return res.status(500).json({message:error.message || "some error in fetching user details"})
     }
 }
 
@@ -54,7 +54,7 @@ const updateUserDetails=async(req,res)=>{
     const userId=req.params.id;
     try {
         const status=await User.update(req.body,{
-            where:{userId:userId}
+            where:{id:userId}
         })
         return (status==1)?res.status(200).json({"message": `User details with id=${userId} were updated successfully.`})
             :res.status(404).json({"message": `Cannot update user with id=${userId}. Maybe user was not found or req.body is empty!`})
@@ -71,7 +71,7 @@ const deleteUser=async(req,res)=>{
                 isDeleted:true,
             },
             {
-                where:{userId:userId}
+                where:{id:userId}
             }
         )
         return (status==1)?res.status(200).json({"message": `User with id=${userId} is soft deleted successfully.`})

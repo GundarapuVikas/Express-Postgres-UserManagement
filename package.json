@@ -8,7 +8,7 @@
     "url": "https://git.epam.com/vikas_gundarapu/rd-frontend.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Vikas Gundarapu",
   "license": "ISC",
   "scripts": {
     "eslint": "npx eslint ./dist/*",
