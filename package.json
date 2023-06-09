@@ -1,0 +1,33 @@
+{
+  "name": "rd-frontend",
+  "description": "Check out the link for the task requirements",
+  "version": "1.0.0",
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://git.epam.com/vikas_gundarapu/rd-frontend.git"
+  },
+  "keywords": [],
+  "author": "Vikas Gundarapu",
+  "license": "ISC",
+  "scripts": {
+    "eslint": "npx eslint ./dist/*",
+    "lint:fix": "npx eslint --fix",
+    "babel": "C:/Users/Vikas_Gundarapu/Desktop/sequelize_learn/rd-frontend/node_modules/.bin/babel src -d dist",
+    "start": "nodemon dist/server.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "babel-eslint": "^10.1.0",
+    "babel-node": "^0.0.1-security",
+    "eslint": "^8.35.0",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.21",
+    "pg": "^8.10.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.29.1",
+    "uuid": "^9.0.0"
+  }
+}
